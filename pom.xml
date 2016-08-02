@@ -33,7 +33,7 @@
 
     <!-- configure the versions you want to use here -->
     <fuse.version>6.2.1.redhat-083</fuse.version>
-    <fabric8.version>2.2.0.redhat-070</fabric8.version>
+    <fabric8.version>2.2.145</fabric8.version>
     <karaf.plugin.version>4.0.2.redhat-621067</karaf.plugin.version>
     <derby.version>10.10.2.0</derby.version>
     <spring.features.version>3.0.4</spring.features.version>
@@ -41,17 +41,6 @@
 
     <!--<docker.from>jboss-fuse-6/fis-karaf-openshift:1.0</docker.from>-->
     <docker.from>fabric8/s2i-karaf:1.2</docker.from>
-    <fabric8.dockerUser>fabric8/</fabric8.dockerUser>
-    <fabric8.image>${fabric8.dockerUser}${project.artifactId}:${project.version}</fabric8.image>
-    <docker.port.container.jolokia>8778</docker.port.container.jolokia>
-    <docker.port.container.http>8181</docker.port.container.http>
-    <fabric8.service.name>${project.artifactId}</fabric8.service.name>
-    <fabric8.service.port>80</fabric8.service.port>
-    <fabric8.service.containerPort>8181</fabric8.service.containerPort>
-    <fabric8.service.type>LoadBalancer</fabric8.service.type>
-
-    <fabric8.label.group>quickstarts</fabric8.label.group>
-    <fabric8.iconRef>camel</fabric8.iconRef>
 
     <!-- maven plugin versions -->
     <fabric8.maven.plugin.version>3.1.4</fabric8.maven.plugin.version>

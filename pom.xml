@@ -22,7 +22,7 @@
 
   <groupId>io.fabric8.quickstarts</groupId>
   <artifactId>jboss-fuse-camel-rest-sql</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0.redhat-000003</version>
   <packaging>bundle</packaging>
   <name>Fabric8 :: Quickstarts :: JBoss Fuse :: Camel Rest using SQL</name>
   <description>Camel Example using Rest DSL with SQL Database in Karaf container</description>
@@ -32,9 +32,9 @@
     <version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
 
     <!-- configure the versions you want to use here -->
-    <fuse.version>6.2.1.redhat-083</fuse.version>
-    <fabric8.version>2.2.145</fabric8.version>
-    <karaf.plugin.version>4.0.2.redhat-621067</karaf.plugin.version>
+    <fuse.version>6.3.0.redhat-157</fuse.version>
+    <fabric8.version>2.2.0.redhat-000001</fabric8.version>
+    <karaf.plugin.version>4.0.6.redhat-000003</karaf.plugin.version>
     <derby.version>10.10.2.0</derby.version>
     <spring.features.version>3.0.4</spring.features.version>
     <spring.tx.feature.version>3.2.11.RELEASE_1</spring.tx.feature.version>
@@ -43,7 +43,7 @@
     <docker.from>fabric8/s2i-karaf:1.2</docker.from>
 
     <!-- maven plugin versions -->
-    <fabric8.maven.plugin.version>3.1.4</fabric8.maven.plugin.version>
+    <fabric8.maven.plugin.version>3.1.0.redhat-000003</fabric8.maven.plugin.version>
     <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
     <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
     <exec-maven-plugin.version>1.4.0</exec-maven-plugin.version>

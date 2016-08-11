@@ -28,7 +28,6 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
 
     <!-- configure the versions you want to use here -->
     <fuse.version>6.2.1.redhat-117</fuse.version>
@@ -36,18 +35,18 @@
     <karaf.plugin.version>4.0.2.redhat-621079</karaf.plugin.version>
     <derby.version>10.10.2.0</derby.version>
     <spring.features.version>3.0.4</spring.features.version>
-    <spring.tx.feature.version>3.2.11.RELEASE_1</spring.tx.feature.version>
 
     <!-- maven plugin versions -->
     <fabric8.maven.plugin.version>3.1.14</fabric8.maven.plugin.version>
     <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
     <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
-    <exec-maven-plugin.version>1.4.0</exec-maven-plugin.version>
+    <version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
+    <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
   </properties>
 
   <dependencyManagement>
     <dependencies>
-      <!-- fabric8 bom must be before fabric8 bom -->
+      <!-- import Fabric8 platform BOM first -->
       <dependency>
         <groupId>io.fabric8</groupId>
         <artifactId>fabric8-project-bom-with-platform-deps</artifactId>
@@ -105,7 +104,7 @@
       <version>1.4_3</version>
     </dependency>
 
-    <!-- Karaf microcontainer dependencies -->
+    <!-- Karaf micro-container dependencies -->
     <dependency>
       <!-- scope is compile so all features (there is only one) are installed into startup.properties,
       and the feature repo itself is not added in etc/org.apache.karaf.features.cfg file -->
@@ -138,26 +137,17 @@
   </dependencies>
 
   <build>
-
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>true</filtering>
-      </resource>
-    </resources>
-    <defaultGoal>install</defaultGoal>
-
     <plugins>
-
-      <!-- Compiler plugin enforces Java 1.8 compatibility and activates annotation processors -->
+      <!-- Compiler plugin enforces Java 1.8 compatibility -->
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.3</version>
+        <version>${maven-compiler-plugin.version}</version>
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
       </plugin>
+
       <plugin>
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>
@@ -176,7 +166,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-install-plugin</artifactId>
-        <version>2.5.2</version>
+        <version>${maven-install-plugin.version}</version>
         <executions>
           <execution>
             <id>default-install</id>
@@ -189,7 +179,7 @@
       </plugin>
 
       <!-- 2. create karaf assembly -->
-      <!-- karaf-maven-plugin creates custom microservice distribution -->
+      <!-- karaf-maven-plugin creates custom micro-service distribution -->
       <plugin>
         <groupId>org.apache.karaf.tooling</groupId>
         <artifactId>karaf-maven-plugin</artifactId>
@@ -215,18 +205,18 @@
           <!-- we are using karaf 2.4.x -->
           <karafVersion>v24</karafVersion>
           <useReferenceUrls>true</useReferenceUrls>
-          <archiveTarGz>false</archiveTarGz>
+          <archiveTarGz>true</archiveTarGz>
+          <archiveZip>false</archiveZip>
           <!-- do not include build output directory -->
           <includeBuildOutputDirectory>false</includeBuildOutputDirectory>
-          <!-- no startupFeatures -->
           <startupFeatures>
             <feature>karaf-framework</feature>
             <feature>shell</feature>
+            <feature>scr</feature>
             <feature>jaas</feature>
             <feature>aries-blueprint</feature>
             <feature>camel-blueprint</feature>
             <feature>camel-servlet</feature>
-            <feature>camel-jms</feature>
             <feature>camel-sql</feature>
             <feature>camel-jackson</feature>
           </startupFeatures>

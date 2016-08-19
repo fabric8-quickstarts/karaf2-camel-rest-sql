@@ -213,6 +213,7 @@
             <feature>camel-servlet</feature>
             <feature>camel-sql</feature>
             <feature>camel-jackson</feature>
+            <feature>camel-swagger-java</feature>
             <feature>kubernetes-client</feature>
             <feature>openshift-client</feature>
             <feature>fabric8-karaf-blueprint</feature>

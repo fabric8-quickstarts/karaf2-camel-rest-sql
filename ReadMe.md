@@ -56,6 +56,10 @@ You can then access these services from your Web browser, e.g.:
 - <http://qs-camel-rest-sql.vagrant.f8/camel-rest-sql/books>
 - <http://qs-camel-rest-sql.vagrant.f8/camel-rest-sql/books/order/1>
 
+### Swagger API
+
+The example provides API documentation of the service using Swagger using the _context-path_ `camel-rest-sql/api-doc`. You can access the API documentation from your Web browser at <http://qs-camel-rest-sql.vagrant.f8/camel-rest-sql/api-doc>.
+
 ### Running the example using OpenShift S2I template
 
 The example can also be built and run using the S2I template [`jboss-fuse-camel-rest-sql-template.json`](https://github.com/jboss-fuse/application-templates/blob/master/quickstarts/jboss-fuse-camel-rest-sql-template.json).

@@ -3,7 +3,15 @@ spec:
   template:
     spec:
       containers:
-        - env:
+        - 
+          resources:
+            requests:
+              cpu: "0.2"
+              memory: 1.5G
+            limits:
+              cpu: "0.4"
+              memory: 2G
+          env:
           - name: MYSQL_SERVICE_NAME
             value: mysql
           - name: MYSQL_SERVICE_DATABASE

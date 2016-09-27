@@ -9,7 +9,7 @@ spec:
               cpu: "0.2"
               memory: 1.5G
             limits:
-              cpu: "0.4"
+              cpu: "1.0"
               memory: 2G
           env:
           - name: MYSQL_SERVICE_NAME

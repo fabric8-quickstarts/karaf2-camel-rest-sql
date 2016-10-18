@@ -1,4 +1,4 @@
-# JBoss Fuse Camel REST / SQL QuickStart
+# Karaf 2 Camel REST / SQL QuickStart
 
 This example demonstrates how to use SQL via JDBC along with Camel's REST DSL to expose a RESTful API.
 

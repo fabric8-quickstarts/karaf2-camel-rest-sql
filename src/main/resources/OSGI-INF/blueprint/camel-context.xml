@@ -77,23 +77,23 @@
 
         <!-- route that generate new orders and insert them in the database -->
         <route id="generateOrder-route">
-            <from id="timer" uri="timer:foo?delay=1s&amp;period=10s"/>
-            <transform id="generate-order">
+            <from id="route-timer" uri="timer:foo?delay=1s&amp;period=10s"/>
+            <transform id="route-generate-order">
                 <method method="generateOrder" ref="orderBean"/>
             </transform>
-            <to id="insert-order" uri="sql:{{sql.insertOrder}}"/>
-            <log id="log-insert" message="Inserted new order ${body.id}"/>
+            <to id="route-insert-order" uri="sql:{{sql.insertOrder}}"/>
+            <log id="route-log-insert" message="Inserted new order ${body.id}"/>
         </route>
 
         <!-- route that process the orders by picking up new rows from the database
          and when done processing then update the row to mark it as processed -->
         <route id="processOrder-route">
-            <from id="from-unprocessed" uri="sql:{{sql.selectUnprocessedOrders}}?consumer.onConsume={{sql.markOrder}}"/>
-            <transform id="transform-order">
+            <from id="route-from-unprocessed" uri="sql:{{sql.selectUnprocessedOrders}}?consumer.onConsume={{sql.markOrder}}"/>
+            <transform id="route-transform-order">
                 <method method="rowToOrder" ref="orderBean"/>
             </transform>
-            <to id="process-order" uri="bean:orderBean?method=processOrder"/>
-            <log id="log-processed-order" message="${body}"/>
+            <to id="route-process-order" uri="bean:orderBean?method=processOrder"/>
+            <log id="route-log-processed-order" message="${body}"/>
         </route>
 
     </camelContext>

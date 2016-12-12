@@ -63,19 +63,20 @@ You can then access these services from your Web browser, e.g.:
 
 The example provides API documentation of the service using Swagger using the _context-path_ `camel-rest-sql/api-doc`. You can access the API documentation from your Web browser at <http://qs-camel-rest-sql.vagrant.f8/camel-rest-sql/api-doc>.
 
-### Running the example using OpenShift S2I template
 
-The example can also be built and run using the S2I template [`jboss-fuse-camel-rest-sql-template.json`](https://github.com/jboss-fuse/application-templates/blob/master/quickstarts/jboss-fuse-camel-rest-sql-template.json).
+### Running via an Application Template
 
-The application can be run directly by first editing the template file and populating S2I build parameters, including the required parameters and then executing the command:
+Applicaiton templates allow you deploy applications to OpenShift by filling out a form in the OpenShift console that allows you to adjust deployment parameters.  This template uses an S2I source build so that it handle building and deploying the application for you.
 
-    $ oc new-app -f quickstart-template.json
+First, import the Fuse image streams:
 
-Alternatively, the template file can be used to create an OpenShift application template by executing the command:
+    oc create -f https://raw.githubusercontent.com/jboss-fuse/application-templates/fis-2.0.x.redhat/fis-image-streams.json
 
-    $ oc create -f quickstart-template.json
+Then create the quickstart template:
 
-### More details
+    oc create -f https://raw.githubusercontent.com/jboss-fuse/application-templates/fis-2.0.x.redhat/quickstarts/karaf2-camel-rest-sql-template.json
 
-You can find more details about running this [quickstart](http://fabric8.io/guide/quickstarts/running.html) on the website. This also includes instructions how to change the Docker image user and registry.
+Now when you use "Add to Project" button in the OpenShift console, you should see a template for this quickstart. 
+
+
 

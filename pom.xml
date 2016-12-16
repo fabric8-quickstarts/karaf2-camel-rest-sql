@@ -35,7 +35,7 @@
     <mysql.version>5.1.26</mysql.version>
 
     <!-- Maven plugin versions -->
-    <fabric8.maven.plugin.version>3.1.80</fabric8.maven.plugin.version>
+    <fabric8.maven.plugin.version>3.1.80.fuse-000012</fabric8.maven.plugin.version>
     <karaf.maven.plugin.version>4.0.6</karaf.maven.plugin.version>
     <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
     <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
@@ -160,13 +160,6 @@
             <id>karaf-assembly</id>
             <goals>
               <goal>assembly</goal>
-            </goals>
-            <phase>install</phase>
-          </execution>
-          <execution>
-            <id>karaf-archive</id>
-            <goals>
-              <goal>archive</goal>
             </goals>
             <phase>install</phase>
           </execution>

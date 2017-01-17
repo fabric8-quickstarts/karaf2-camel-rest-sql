@@ -2,6 +2,10 @@
 
 This example demonstrates how to use SQL via JDBC along with Camel's REST DSL to expose a RESTful API.
 
+### Configuring
+
+The `src/main/fabric8/deployment.yml` should be updated with a mysql username/password that can access your mysql system.
+
 ### Building
 
 The example can be built with:

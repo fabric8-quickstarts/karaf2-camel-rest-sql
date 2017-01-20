@@ -21,7 +21,7 @@
 
   <groupId>io.fabric8.quickstarts</groupId>
   <artifactId>karaf2-camel-rest-sql</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0.fuse-000028</version>
   <packaging>bundle</packaging>
   <name>Fabric8 :: Quickstarts :: Karaf 2 :: Camel Rest using SQL</name>
   <description>Karaf 2 example running a Camel route connecting to a SQL database</description>
@@ -30,12 +30,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <!-- configure the versions you want to use here -->
-    <fabric8.version>2.2.170.fuse-000016</fabric8.version>
+    <fabric8.version>2.2.170.fuse-000022</fabric8.version>
     <mysql.version>5.1.26</mysql.version>
 
     <!-- Maven plugin versions -->
-    <fabric8.maven.plugin.version>3.1.80.fuse-000017</fabric8.maven.plugin.version>
-    <karaf.maven.plugin.version>4.0.6</karaf.maven.plugin.version>
+    <fabric8.maven.plugin.version>3.1.80.fuse-000024</fabric8.maven.plugin.version>
+    <karaf.maven.plugin.version>4.0.8.fuse-000014</karaf.maven.plugin.version>
     <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
     <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
     <maven-bundle-plugin.version>2.3.7</maven-bundle-plugin.version>

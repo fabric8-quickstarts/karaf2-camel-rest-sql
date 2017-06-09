@@ -30,6 +30,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <!-- configure the versions you want to use here -->
+    <fuse.version>6.3.0.redhat-187</fuse.version>
     <fabric8.version>2.2.211</fabric8.version>
     <mysql.version>5.1.26</mysql.version>
 
@@ -86,6 +87,7 @@
       and the feature repo itself is not added in etc/org.apache.karaf.features.cfg file -->
       <groupId>org.jboss.fuse</groupId>
       <artifactId>fuse-karaf-framework</artifactId>
+      <version>${fuse.version}</version>
       <type>kar</type>
       <!-- no need to download kar dependencies -->
       <exclusions>

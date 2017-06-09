@@ -30,7 +30,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <!-- configure the versions you want to use here -->
-    <fabric8.version>2.2.183</fabric8.version>
+    <fabric8.version>2.2.211</fabric8.version>
     <mysql.version>5.1.26</mysql.version>
 
     <!-- Maven plugin versions -->

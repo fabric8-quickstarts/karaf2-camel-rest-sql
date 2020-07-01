@@ -31,7 +31,7 @@
 
     <!-- configure the versions you want to use here -->
     <fabric8.version>2.3.2</fabric8.version>
-    <mysql.version>5.1.26</mysql.version>
+    <mysql.version>8.0.16</mysql.version>
 
     <!-- Maven plugin versions -->
     <fabric8.maven.plugin.version>3.5.17</fabric8.maven.plugin.version>
